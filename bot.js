@@ -12,15 +12,16 @@ client.on('message', message => {
   if (message.author.bot) return;
 
   const messageArray = message.content.split(" ");
-	const commandName = messageArray[0];
-	const args = messageArray.slice(1);
+  const commandName = messageArray[0];
+  const args = messageArray.slice(1);
   
   if (commandName === `${BOT_PREFIX}kostka`) {
-   	const embed = new Discord.RichEmbed()
-		.setColor("#" + ((1 << 24) * Math.random() | 0).toString(16).slice(-6))
-		.setAuthor(message.author.username, message.author.displayAvatarURL)
-		.addField("Losowanie się powiodło", "Wylosowałeś/aś liczbę o numerze: " + (Math.floor(Math.random() * 6) + 1));
-		return message.channel.send(embed); 
+    const embed = new Discord.RichEmbed()
+    .setColor("#" + ((1 << 24) * Math.random() | 0).toString(16).slice(-6))
+    .setAuthor(message.author.username, message.author.displayAvatarURL)
+    .addField("Losowanie się powiodło", "Wylosowałeś/aś liczbę o numerze: " + (Math.floor(Math.random() * 6) + 1))
+    .setFooter("crackhouse.pl");
+    return message.channel.send(embed); 
   }
 });
 
