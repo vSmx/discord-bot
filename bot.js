@@ -1,14 +1,9 @@
 // require
 const {BOT_TOKEN, BOT_PREFIX} = process.env;
 const Discord = require('discord.js');
-const BotClient = require('./structures/Client');
 const path = require('path');
 
-const client = new BotClient({
-	commandPrefix: BOT_PREFIX,
-	disableEveryone: true,
-	unknownCommandResponse: false,
-});
+const client = new Discord.Client();
 
 client.on('ready', () => {
   console.log('Bot został uruchomiony pomyślnie.');
