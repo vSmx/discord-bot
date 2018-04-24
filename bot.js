@@ -11,8 +11,9 @@ client.on('ready', () => {
 });
 
 client.on('message', message => {
-  if (message.author.bot) return;
-  message.channel.send(`test`);
+  if (message.content === 'ping') {
+    message.reply('pong');
+  }
 });
 
 client.login(BOT_TOKEN);
