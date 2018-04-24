@@ -7,7 +7,7 @@ const client = new Discord.Client();
 
 client.on('ready', () => {
   console.log('Bot został uruchomiony pomyślnie.');
-  client.user.setActivity(`ja tu tylko sprzątam`);
+  client.user.setd(`ja tu tylko sprzątam`);
 });
 
 client.on('message', message => {
