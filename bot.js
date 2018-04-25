@@ -27,8 +27,8 @@ client.on('message', message => {
         title: "Informacje o użytkowniku",
         fields: [
           {
-            name: "Test",
-            value: "test 1231 2312313213"
+            name: "Identyfikator konta",
+            value: message.author.id,
           },
         ],
         footer: {
