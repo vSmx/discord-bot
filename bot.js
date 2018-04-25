@@ -15,9 +15,16 @@ client.on('message', message => {
   const commandName = messageArray[0];
   const args = messageArray.slice(1);
   
-  if (commandName === `${BOT_PREFIX}pomoc`) {
+  if (commandName === `${BOT_PREFIX}help`) {
     message.reply("w trakcie prac.");
-  } else if (commandName === `${BOT_PREFIX}kostka`) {
+  } else if (commandName === `${BOT_PREFIX}me`) {
+    const embed = new Discord.RichEmbed()
+    .setColor("#" + ((1 << 24) * Math.random() | 0).toString(16).slice(-6))
+    .setAuthor(message.author.username, message.author.displayAvatarURL)
+    .addField("test", "test")
+    .setFooter("crackhouse.pl");
+    
+  } else if (commandName === `${BOT_PREFIX}throw`) {
     const embed = new Discord.RichEmbed()
     .setColor("#" + ((1 << 24) * Math.random() | 0).toString(16).slice(-6))
     .setAuthor(message.author.username, message.author.displayAvatarURL)
