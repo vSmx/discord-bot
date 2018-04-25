@@ -17,20 +17,23 @@ client.on('message', message => {
   if (commandName === `${BOT_PREFIX}help`) {
     message.channel.send("komenda w trakcie prac");
   } else if (commandName === `${BOT_PREFIX}me`) {
-    const nitro = message.author.premium;
-    if (nitro) {
-      test = "tak"
-    } else {
-      test = "nie" 
-    }
-    
-    const embed = new Discord.RichEmbed()
-    .setColor("#" + ((1 << 24) * Math.random() | 0).toString(16).slice(-6))
-    .setAuthor(message.author.username, message.author.displayAvatarURL)
-    
-    .addField("Discord Nitro", test)
-    .setFooter("crachkouse.pl");
-    return message.channel.send(embed);
+    return message.channel.send({embed: {
+      author: {
+        name: message.author.username,
+        icon_url: message.author.avatarURL
+      },
+      
+      title: "Informacje o użytkowniku",
+      fields: [
+        {
+          name: "Test",
+          value: "test 1231 2312313213"
+        },
+      ],
+      footer: {
+        text: "crackhouse.pl"
+      },
+    });
   }
 });
 
