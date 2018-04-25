@@ -17,23 +17,25 @@ client.on('message', message => {
   if (commandName === `${BOT_PREFIX}help`) {
     message.channel.send("komenda w trakcie prac");
   } else if (commandName === `${BOT_PREFIX}me`) {
-    return message.channel.send({embed: {
-      author: {
-        name: message.author.username,
-        icon_url: message.author.avatarURL
-      },
-      
-      title: "Informacje o użytkowniku",
-      fields: [
-        {
-          name: "Test",
-          value: "test 1231 2312313213"
+    return message.channel.send({
+      embed: {
+        author: {
+          name: message.author.username,
+          icon_url: message.author.avatarURL
         },
-      ],
-      footer: {
-        text: "crackhouse.pl"
-      },
-    }
+      
+        title: "Informacje o użytkowniku",
+        fields: [
+          {
+            name: "Test",
+            value: "test 1231 2312313213"
+          },
+        ],
+        footer: {
+          text: "crackhouse.pl",
+          icon_url: message.guild.iconURL
+        },
+      }
     });
   }
 });
