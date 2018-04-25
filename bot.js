@@ -16,13 +16,6 @@ client.on('message', message => {
   
   if (commandName === `${BOT_PREFIX}help`) {
     message.channel.send("komenda w trakcie prac");
-  } else if (commandName === `${BOT_PREFIX}throw`) {
-    const embed = new Discord.RichEmbed()
-    .setColor("#" + ((1 << 24) * Math.random() | 0).toString(16).slice(-6))
-    .setAuthor(message.author.username, message.author.displayAvatarURL)
-    .addField("Losowanie się powiodło", "Wylosowałeś/aś liczbę o numerze: " + (Math.floor(Math.random() * 6) + 1))
-    .setFooter("crackhouse.pl");
-    return message.channel.send(embed); 
   }
 });
 
