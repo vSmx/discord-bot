@@ -1,4 +1,3 @@
-// require
 const {BOT_TOKEN, BOT_PREFIX} = process.env;
 const Discord = require('discord.js');
 const client = new Discord.Client();
@@ -22,6 +21,7 @@ client.on('message', message => {
     .setColor("#" + ((1 << 24) * Math.random() | 0).toString(16).slice(-6))
     .setAuthor(message.author.username, message.author.displayAvatarURL)
     .setFooter("crackhouse.pl");
+    return message.channel.send(embed);
   } else if (commandName === `${BOT_PREFIX}throw`) {
     const embed = new Discord.RichEmbed()
     .setColor("#" + ((1 << 24) * Math.random() | 0).toString(16).slice(-6))
