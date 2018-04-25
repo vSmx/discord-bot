@@ -19,6 +19,7 @@ client.on('message', message => {
   } else if (commandName === `${BOT_PREFIX}me`) {
     return message.channel.send({
       embed: {
+        color: ((1 << 24) * Math.random() | 0).toString(16).slice(-6),
         author: {
           name: message.author.username,
           icon_url: message.author.avatarURL
