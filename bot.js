@@ -15,7 +15,7 @@ client.on('message', message => {
   const args = messageArray.slice(1);
   
   if (commandName === `${BOT_PREFIX}help`) {
-    message.reply("w trakcie prac");
+    message.channel.send("komenda w trakcie prac");
   } else if (commandName === `${BOT_PREFIX}throw`) {
     const embed = new Discord.RichEmbed()
     .setColor("#" + ((1 << 24) * Math.random() | 0).toString(16).slice(-6))
