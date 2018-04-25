@@ -21,9 +21,7 @@ client.on('message', message => {
     const embed = new Discord.RichEmbed()
     .setColor("#" + ((1 << 24) * Math.random() | 0).toString(16).slice(-6))
     .setAuthor(message.author.username, message.author.displayAvatarURL)
-    .addField("test", "test")
     .setFooter("crackhouse.pl");
-    
   } else if (commandName === `${BOT_PREFIX}throw`) {
     const embed = new Discord.RichEmbed()
     .setColor("#" + ((1 << 24) * Math.random() | 0).toString(16).slice(-6))
