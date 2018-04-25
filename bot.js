@@ -20,6 +20,7 @@ client.on('message', message => {
     const embed = new Discord.RichEmbed()
     .setColor("#" + ((1 << 24) * Math.random() | 0).toString(16).slice(-6))
     .setAuthor(message.author.username, message.author.displayAvatarURL)
+    .addField("Discord Nitro", message.author.premium)
     .setFooter("crachkouse.pl");
     return message.channel.send(embed);
   }
