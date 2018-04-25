@@ -33,6 +33,7 @@ client.on('message', message => {
       footer: {
         text: "crackhouse.pl"
       },
+    }
     });
   }
 });
