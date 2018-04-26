@@ -1,10 +1,10 @@
-const {BOT_TOKEN, BOT_PREFIX, BOT_DESCRIPTION} = process.env;
+const {BOT_TOKEN, BOT_PREFIX, BOT_DESCRIPTION, BOT_HELP} = process.env;
 const Discord = require('discord.js');
 const client = new Discord.Client();
 
 client.on('ready', () => {
   console.log('Bot został uruchomiony pomyślnie.');
-  client.user.setActivity(`${BOT_PREFIX}help | ${BOT_DESCRIPTION}`);
+  client.user.setActivity(`${BOT_PREFIX}${BOT_HELP} | ${BOT_DESCRIPTION}`);
 });
 
 client.on('message', message => {
@@ -13,7 +13,7 @@ client.on('message', message => {
   const identity = message.guild.members.get(message.author.id);
   const command = message.content.split(" ")[0];
   
-  if (command === `${BOT_PREFIX}help`) {
+  if (command === `${BOT_PREFIX}${BOT_HELP}`) {
     identity.user.send("Wkrótce.");
     message.channel.send("Sprawdź swoje **prywatne wiadomości**, aby uzyskać pomoc!");
   }
