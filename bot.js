@@ -1,19 +1,18 @@
 const {BOT_TOKEN, BOT_PREFIX} = process.env;
 const Discord = require('discord.js');
 const client = new Discord.Client();
-var timestamp = new Date();
 
 client.on('ready', () => {
   console.log('Bot został uruchomiony pomyślnie.');
   client.user.setActivity({
     details: "test",
     state: "test2",
-    timestamp,
     largeImageKey: undefined,
     largeImageText: undefined,
     instance: true,
   });
 });
+asd
 
 client.on('message', message => {
   if (message.author.bot || message.channel.type === "dm") return;
