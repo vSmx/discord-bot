@@ -16,27 +16,6 @@ client.on('message', message => {
   
   if (commandName === `${BOT_PREFIX}help`) {
     message.channel.send("komenda w trakcie prac");
-  } else if (commandName === `${BOT_PREFIX}me`) {
-    return message.channel.send({
-      embed: {
-        color: ((1 << 24) * Math.random() | 0).toString(16).slice(-6),
-        author: {
-          name: message.author.username,
-        },
-      
-        title: "Informacje o użytkowniku",
-        fields: [
-          {
-            name: "Identyfikator konta",
-            value: message.author.id,
-          },
-        ],
-        footer: {
-          text: "crackhouse.pl",
-          icon_url: message.guild.iconURL
-        },
-      }
-    });
   }
 });
 
