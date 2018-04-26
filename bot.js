@@ -1,7 +1,7 @@
 const {BOT_TOKEN, BOT_PREFIX} = process.env;
 const Discord = require('discord.js');
 const client = new Discord.Client();
-
+asdasd
 client.on('ready', () => {
   console.log('Bot został uruchomiony pomyślnie.');
   client.user.setActivity({
