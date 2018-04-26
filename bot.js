@@ -10,8 +10,8 @@ var timestamp = new Date();
 
 function setAgain() {
     rpc.setActivity({
-        details: naglowek,
-        state: zawartosc,
+        details: "crackhouse.pl",
+        state: "test test test",
         timestamp,
         largeImageKey: undefined,
         largeImageText: undefined,
