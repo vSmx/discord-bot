@@ -9,13 +9,15 @@ client.on('ready', () => {
 
 client.on('message', message => {
   if (message.author.bot) return;
-
+  
+  const identity = message.guild.members.get(message.author.id);
   const messageArray = message.content.split(" ");
   const commandName = messageArray[0];
   const args = messageArray.slice(1);
   
   if (commandName === `${BOT_PREFIX}help`) {
-    message.channel.send("komenda w trakcie prac");
+    identity.user.send("test");
+    message.channel.send("Sprawdź swoje **prywatne wiadomości**, aby uzyskać pomoc!");
   }
 });
 
