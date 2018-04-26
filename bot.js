@@ -1,29 +1,10 @@
-const {BOT_TOKEN, BOT_PREFIX} = process.env;
+const {BOT_TOKEN, BOT_PREFIX, BOT_DESCRIPTION} = process.env;
 const Discord = require('discord.js');
 const client = new Discord.Client();
 
-const DiscordRPC = require("discord-rpc");
-const rpc = new DiscordRPC.Client({
-  transport: 'ipc'
-});
-
-function setAgain() {
-    rpc.setActivity({
-        details: "crackhouse.pl",
-        state: "test test test",
-        largeImageKey: undefined,
-        largeImageText: undefined,
-        instance: true,
-    });
-}
-
-rpc.on("ready", function () {
-    setAgain();
-});
-
 client.on('ready', () => {
   console.log('Bot został uruchomiony pomyślnie.');
-  rpc.login(client.user.id).catch(console.error);
+  client.user.setActivity(`${BOT_PREFIX}help | ${BOT_DESCRIPTION}`);
 });
 
 client.on('message', message => {
