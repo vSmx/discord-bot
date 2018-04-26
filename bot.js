@@ -8,7 +8,7 @@ client.on('ready', () => {
 });
 
 client.on('message', message => {
-  if (message.author.bot) return;
+  if (message.author.bot || message.channel.type === "dm") return;
   
   const identity = message.guild.members.get(message.author.id);
   const messageArray = message.content.split(" ");
