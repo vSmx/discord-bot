@@ -6,13 +6,11 @@ const DiscordRPC = require("discord-rpc");
 const rpc = new DiscordRPC.Client({
   transport: 'ipc'
 });
-var timestamp = new Date();
 
 function setAgain() {
     rpc.setActivity({
         details: "crackhouse.pl",
         state: "test test test",
-        timestamp,
         largeImageKey: undefined,
         largeImageText: undefined,
         instance: true,
