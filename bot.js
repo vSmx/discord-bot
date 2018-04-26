@@ -2,16 +2,30 @@ const {BOT_TOKEN, BOT_PREFIX} = process.env;
 const Discord = require('discord.js');
 const client = new Discord.Client();
 
-asdasdsd
+const DiscordRPC = require("discord-rpc");
+const rpc = new DiscordRPC.Client({
+  transport: 'ipc'
+});
+var timestamp = new Date();
+
+function setAgain() {
+    rpc.setActivity({
+        details: naglowek,
+        state: zawartosc,
+        timestamp,
+        largeImageKey: undefined,
+        largeImageText: undefined,
+        instance: true,
+    });
+}
+
+rpc.on("ready", function () {
+    setAgain();
+});
+
 client.on('ready', () => {
   console.log('Bot został uruchomiony pomyślnie.');
-  client.user.setActivity({
-    details: "test",
-    state: "test2",
-    largeImageKey: undefined,
-    largeImageText: undefined,
-    instance: true,
-  });
+  rpc.login(client.user.id).catch(console.error);
 });
 
 client.on('message', message => {
