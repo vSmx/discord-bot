@@ -12,7 +12,7 @@ client.on('message', message => {
   
   const identity = message.guild.members.get(message.author.id);
   const args = message.content.slice(BOT_PREFIX.length).split(' ');
-  const command = message.content.split(" ")[0];
+  const command = args.shift().toLowerCase();
   
   if (command === `${BOT_PREFIX}${BOT_HELP}`) {
     identity.user.send("Wkrótce.");
