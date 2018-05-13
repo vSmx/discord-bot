@@ -11,11 +11,18 @@ client.on('message', message => {
   if (message.author.bot || message.channel.type === "dm") return;
   
   const identity = message.guild.members.get(message.author.id);
+  const args = message.content.slice(BOT_PREFIX.length).split(' ');
   const command = message.content.split(" ")[0];
   
   if (command === `${BOT_PREFIX}${BOT_HELP}`) {
     identity.user.send("Wkrótce.");
     message.channel.send("Sprawdź swoje **prywatne wiadomości**, aby uzyskać pomoc!");
+  } else if (command === `${BOT_PREFIX}prune`) {
+    const amount = parseInt(args[0]);
+    if (isNaN(amount)) {
+        return message.reply("to nie wydaje się być prawidłową liczbą.");
+    }
+    message.channel.bulkDelete(amount, true);
   }
 });
 
