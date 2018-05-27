@@ -10,9 +10,17 @@ client.on('ready', () => {
 client.on('message', message => {
   if (message.author.bot || message.channel.type === "dm") return;
   
-  const identity = message.guild.members.get(message.author.id);
-  const args = message.content.slice(BOT_PREFIX.length).split(' ');
+  const args = message.content.slice(prefix.length).trim().split(/ +/g);
   const command = args.shift().toLowerCase();
+  
+  switch (command) {
+    case "help" :
+      message.reply("wkrótce.");
+      break;
+    case "blah" :
+      message.channel.send('Meh.');
+      break;
+  }
   
   if (command === `${BOT_PREFIX}${BOT_HELP}`) {
     identity.user.send("Wkrótce.");
