@@ -10,7 +10,7 @@ client.on('ready', () => {
 client.on('message', message => {
   if (message.author.bot || message.channel.type === "dm") return;
   
-  const args = message.content.slice(prefix.length).trim().split(/ +/g);
+  const args = message.content.slice(BOT_PREFIX.length).trim().split(/ +/g);
   const command = args.shift().toLowerCase();
   
   switch (command) {
