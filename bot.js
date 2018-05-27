@@ -17,12 +17,6 @@ client.on('message', message => {
   if (command === `${BOT_PREFIX}${BOT_HELP}`) {
     identity.user.send("Wkrótce.");
     message.channel.send("Sprawdź swoje **prywatne wiadomości**, aby uzyskać pomoc!");
-  } else if (command === `${BOT_PREFIX}prune`) {
-    const amount = parseInt(args[0]);
-    if (isNaN(amount)) {
-        return message.reply("to nie wydaje się być prawidłową liczbą.");
-    }
-    message.channel.bulkDelete(amount, true);
   }
 });
 
